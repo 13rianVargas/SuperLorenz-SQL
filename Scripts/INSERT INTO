@@ -2,3 +2,54 @@
 
 -- Usar Databse
 USE SuperLorenz;
+INSERT INTO Persona (DocumentoID, TipoDeDocumento, PersonaID, Nombre, Celular)
+VALUES (1, 'Cedula', 1001, 'Juan Pérez', 123456789);
+
+INSERT INTO Empleado (PersonaID, EmpleadoID, Cargo, Dependencia, TipoDeContrato, EPS, ARL, NombreDeEmergencia, CelularDeEmergencia)
+VALUES (1001, 2001, 'Gerente', 'Administración', 'Indefinido', 'Salud S.A.', 'ARL S.A.', 'Ana Pérez', 321654987),
+(1002, 2002, 'Asistente', 'Finanzas', 'Temporal', 'Salud S.A.', 'ARL S.A.', 'Luis Gómez', 987321654);
+
+INSERT INTO Cliente (PersonaID, ClienteID, Direccion, TipoDeCliente, FechaDeNacimiento, EstadoCivil, AutorizacionDeDatos)
+VALUES 
+(1003, 3001, 'Calle Falsa 123', 'Regular', '1990-01-15', 'Soltero', 'Sí'),
+(1001, 3002, 'Avenida Siempre Viva 742', 'VIP', '1985-05-20', 'Casado', 'No');
+
+
+INSERT INTO Proveedor (PersonaID, ProveedorID, TipoDeProveedor, NombreDeContacto, NumeroDeContacto)
+VALUES 
+(1001, 4001, 'Mayorista', 'Pedro Ruiz', 987654321),
+(1002, 4002, 'Distribuidor', 'Laura Torres', 123987654);
+
+
+INSERT INTO Producto (ProductoID, NombreDelProducto, DescripcionDelProducto, Categoria, Marca)
+VALUES 
+(5001, 'Producto A', 'Descripción del producto A', 'Categoría 1', 'Marca X'),
+(5002, 'Producto B', 'Descripción del producto B', 'Categoría 2', 'Marca Y');
+
+
+INSERT INTO ProveedorProducto (ProveedorProductoID, ProductoID, ProveedorID, ValorMinimo, ValorMaximo)
+VALUES 
+(6001, 5001, 4001, 100.0, 150.0),
+(6002, 5002, 4002, 200.0, 250.0);
+
+
+INSERT INTO OrdenDeCompra (OrdenDeCompraID, EmpleadoID, ClienteID, MedioDePago, FechaPago, FechaEnvio, FechaEntrega, ValorTotal)
+VALUES 
+(7001, 2001, 3001, 'Tarjeta', '2023-09-01', '2023-09-02', '2023-09-05', 300.0);
+
+INSERT INTO Pedido (PedidoID, OrdenDeCompraID, ProductoID, Cantidad, ValorUnitario)
+VALUES 
+(8001, 7001, 5001, 2, 125.0),
+(8002, 7001, 5002, 1, 225.0);
+
+INSERT INTO CompralInsumos (CompralInsumosID, ProveedorProductoID, Cantidad, Estado, FechaDeCompra, FechaDeEntrega, PrecioUnitario, ProductoMasIva, ValorTotal)
+VALUES 
+(9001, 6001, 10, 'Pendiente', '2023-09-10', '2023-09-12', 110.0, 121.0, 1210.0);
+
+INSERT INTO Kardex (KardexID, ProductoID, CantidadSalida, CantidadEntrada, CantidadDisponible, MotivoSalida, Fecha)
+VALUES 
+(10001, 5001, 5, 0, 5, 'Venta', '2023-09-15'),
+(10002, 5002, 0, 10, 10, 'Recepción', '2023-09-18');
+
+
+
