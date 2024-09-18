@@ -3,7 +3,7 @@
 -- Usar Databse
 USE SuperLorenz;
 INSERT INTO Persona (DocumentoID, TipoDeDocumento, PersonaID, Nombre, Celular)
-VALUES (1, 'Cedula', 1001, 'Juan Pérez', 123456789);
+VALUES (103312222, 'Cedula', 1001, 'Juan Pérez', 123456789);
 
 INSERT INTO Empleado (PersonaID, EmpleadoID, Cargo, Dependencia, TipoDeContrato, EPS, ARL, NombreDeEmergencia, CelularDeEmergencia)
 VALUES (1001, 2001, 'Gerente', 'Administración', 'Indefinido', 'Salud S.A.', 'ARL S.A.', 'Ana Pérez', 321654987),
@@ -50,6 +50,9 @@ INSERT INTO Kardex (KardexID, ProductoID, CantidadSalida, CantidadEntrada, Canti
 VALUES 
 (10001, 5001, 5, 0, 5, 'Venta', '2023-09-15'),
 (10002, 5002, 0, 10, 10, 'Recepción', '2023-09-18');
+(10003, 5002, 0, 15, 10 , 'Venta', '2023-09-19')
+
+
 
 
 
