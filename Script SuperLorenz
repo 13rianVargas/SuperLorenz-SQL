@@ -37,7 +37,7 @@ CREATE TABLE Cliente (
 
 ALTER TABLE Cliente
     ADD CONSTRAINT FK_Cliente_Persona
-    FOREIGN KEY (PersonaID) REFERENCES Persona(PersonaID)
+    FOREIGN KEY (PersonaID) REFERENCES Persona(PersonaID);
 
 -- Tabla Proveedor (relacionada con Persona)
 CREATE TABLE Proveedor (
@@ -96,7 +96,7 @@ ALTER TABLE OrdenDeCompra
 
 ALTER TABLE OrdenDeCompra
     ADD CONSTRAINT FK_OrdenDeCompra_Cliente
-    FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID)
+    FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID);
 
 -- Tabla Pedido (relacionada con OrdenDeCompra y Producto)
 CREATE TABLE Pedido (
@@ -140,7 +140,7 @@ CREATE TABLE Kardex (
     CantidadEntrada INT NOT NULL,
     CantidadDisponible INT NOT NULL,
     MotivoSalida VARCHAR(250) NULL,
-    Fecha DATE NOT NULL,
+    Fecha DATE NOT NULL
 );
 
 ALTER TABLE Kardex
