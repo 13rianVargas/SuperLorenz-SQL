@@ -1,0 +1,4 @@
+-- Añadir acá el Script para insertar los datos creados por IA
+
+-- Usar Databse
+USE SuperLorenz;

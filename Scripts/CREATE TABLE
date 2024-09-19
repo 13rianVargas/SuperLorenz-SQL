@@ -1,3 +1,9 @@
+-- Creación de Database
+CREATE DATABASE SuperLorenz;
+
+-- Usar Databse
+USE SuperLorenz;
+
 -- Tabla Persona
 CREATE TABLE Persona (
     DocumentoID INT NOT NULL,
