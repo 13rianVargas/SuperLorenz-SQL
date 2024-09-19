@@ -1,0 +1,139 @@
+-- Tabla Persona
+CREATE TABLE Persona (
+    DocumentoID INT NOT NULL,
+    TipoDeDocumento VARCHAR(50) NOT NULL,
+    PersonaID INT PRIMARY KEY NOT NULL,
+    Nombre VARCHAR(50) NOT NULL,
+    Celular INT NOT NULL
+);
+
+-- Tabla Empleado (relacionada con Persona)
+CREATE TABLE Empleado (
+    PersonaID INT NOT NULL,
+    EmpleadoID INT PRIMARY KEY NOT NULL,
+    Cargo VARCHAR(50) NOT NULL,
+    Dependencia VARCHAR(50) NOT NULL,
+    TipoDeContrato VARCHAR(50) NOT NULL,
+    EPS VARCHAR(50) NOT NULL,
+    ARL VARCHAR(50) NOT NULL,
+    NombreDeEmergencia VARCHAR(50) NOT NULL,
+    CelularDeEmergencia INT NOT NULL
+);
+
+ALTER TABLE Empleado 
+    FOREIGN KEY (PersonaID) REFERENCES Persona(PersonaID);
+
+-- Tabla Cliente (relacionada con Persona)
+CREATE TABLE Cliente (
+    PersonaID INT NOT NULL,
+    ClienteID INT PRIMARY KEY NOT NULL,
+    Direccion VARCHAR(50) NOT NULL,
+    TipoDeCliente VARCHAR(50) NOT NULL,
+    FechaDeNacimiento DATE NULL,
+    EstadoCivil VARCHAR(50) NULL,
+    AutorizacionDeDatos VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE Cliente
+    FOREIGN KEY (PersonaID) REFERENCES Persona(PersonaID)
+
+-- Tabla Proveedor (relacionada con Persona)
+CREATE TABLE Proveedor (
+    PersonaID INT NOT NULL,
+    ProveedorID INT PRIMARY KEY NOT NULL,
+    TipoDeProveedor VARCHAR(50) NOT NULL,
+    NombreDeContacto VARCHAR(50) NOT NULL,
+    NumeroDeContacto INT NOT NULL
+);
+
+ALTER TABLE  Proveedor
+    FOREIGN KEY (PersonaID) REFERENCES Persona(PersonaID);
+
+-- Tabla Producto
+CREATE TABLE Producto (
+    ProductoID INT PRIMARY KEY NOT NULL,
+    NombreDelProducto VARCHAR(50) NOT NULL,
+    DescripcionDelProducto VARCHAR(255) NULL,
+    Categoria VARCHAR(50) NOT NULL,
+    Marca VARCHAR(50) NOT NULL
+);
+
+-- Tabla ProveedorProducto (relacionada con Proveedor y Producto)
+CREATE TABLE ProveedorProducto (
+    ProveedorProductoID INT PRIMARY KEY NOT NULL,
+    ProductoID INT NOT NULL,
+    ProveedorID INT NOT NULL,
+    ValorMinimo FLOAT NOT NULL,
+    ValorMaximo FLOAT NOT NULL
+);
+
+ALTER TABLE  ProveedorProducto
+    FOREIGN KEY (ProductoID) REFERENCES Producto(ProductoID);
+
+ALTER TABLE  ProveedorProducto
+    FOREIGN KEY (ProveedorID) REFERENCES Proveedor(ProveedorID);
+
+-- Tabla OrdenDeCompra (relacionada con Empleado y Cliente)
+CREATE TABLE OrdenDeCompra (
+    OrdenDeCompraID INT PRIMARY KEY NOT NULL,
+    EmpleadoID INT NOT NULL,
+    ClienteID INT NOT NULL,
+    MedioDePago VARCHAR(50) NOT NULL,
+    FechaPago DATE NOT NULL,
+    FechaEnvio DATE NOT NULL,
+    FechaEntrega DATE NOT NULL,
+    ValorTotal FLOAT NOT NULL
+);
+
+ALTER TABLE OrdenDeCompra
+    FOREIGN KEY (EmpleadoID) REFERENCES Empleado(EmpleadoID);
+
+ALTER TABLE OrdenDeCompra
+    FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID)
+
+-- Tabla Pedido (relacionada con OrdenDeCompra y Producto)
+CREATE TABLE Pedido (
+    PedidoID INT PRIMARY KEY NOT NULL,
+    OrdenDeCompraID INT NOT NULL,
+    ProductoID INT NOT NULL,
+    Cantidad INT NOT NULL,
+    ValorUnitario FLOAT NOT NULL
+);
+
+ALTER TABLE Pedido
+    FOREIGN KEY (OrdenDeCompraID) REFERENCES OrdenDeCompra(OrdenDeCompraID);
+
+ALTER TABLE Pedido
+    FOREIGN KEY (ProductoID) REFERENCES Producto(ProductoID);
+
+-- Tabla CompralInsumos (relacionada con ProveedorProducto)
+CREATE TABLE CompralInsumos (
+    CompralInsumosID INT PRIMARY KEY NOT NULL,
+    ProveedorProductoID INT NOT NULL,
+    Cantidad INT NOT NULL,
+    Estado VARCHAR(50) NOT NULL,
+    FechaDeCompra DATE NOT NULL,
+    FechaDeEntrega DATE NOT NULL,
+    PrecioUnitario FLOAT NOT NULL,
+    ProductoMasIva FLOAT NOT NULL,
+    ValorTotal FLOAT NOT NULL
+);
+
+ALTER TABLE CompralInsumos
+    FOREIGN KEY (ProveedorProductoID) REFERENCES ProveedorProducto(ProveedorProductoID);
+
+-- Tabla Kardex (relacionada con Producto)
+CREATE TABLE Kardex (
+    KardexID INT PRIMARY KEY NOT NULL,
+    ProductoID INT NOT NULL,
+    CantidadSalida INT NOT NULL,
+    CantidadEntrada INT NOT NULL,
+    CantidadDisponible INT NOT NULL,
+    MotivoSalida VARCHAR(250) NULL,
+    Fecha DATE NOT NULL,
+);
+
+ALTER TABLE Kardex
+    FOREIGN KEY (ProductoID) REFERENCES Producto(ProductoID);
+
+
