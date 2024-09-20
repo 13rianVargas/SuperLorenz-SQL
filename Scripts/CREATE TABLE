@@ -26,10 +26,6 @@ CREATE TABLE Empleado (
     CelularDeEmergencia INT NOT NULL
 );
 
-ALTER TABLE Empleado
-    ADD CONSTRAINT FK_Empleado_Persona
-    FOREIGN KEY (PersonaID) REFERENCES Persona(PersonaID);
-
 -- Tabla Cliente (relacionada con Persona)
 CREATE TABLE Cliente (
     PersonaID INT NOT NULL,
@@ -41,9 +37,6 @@ CREATE TABLE Cliente (
     AutorizacionDeDatos VARCHAR(50) NOT NULL
 );
 
-ALTER TABLE Cliente
-    ADD CONSTRAINT FK_Cliente_Persona
-    FOREIGN KEY (PersonaID) REFERENCES Persona(PersonaID);
 
 -- Tabla Proveedor (relacionada con Persona)
 CREATE TABLE Proveedor (
@@ -53,10 +46,6 @@ CREATE TABLE Proveedor (
     NombreDeContacto VARCHAR(50) NOT NULL,
     NumeroDeContacto INT NOT NULL
 );
-
-ALTER TABLE  Proveedor
-    ADD CONSTRAINT FK_Proveedor_Persona
-    FOREIGN KEY (PersonaID) REFERENCES Persona(PersonaID);
 
 -- Tabla Producto
 CREATE TABLE Producto (
@@ -76,14 +65,6 @@ CREATE TABLE ProveedorProducto (
     ValorMaximo FLOAT NOT NULL
 );
 
-ALTER TABLE  ProveedorProducto
-    ADD CONSTRAINT FK_ProveedorProducto_Producto
-    FOREIGN KEY (ProductoID) REFERENCES Producto(ProductoID);
-
-ALTER TABLE  ProveedorProducto
-    ADD CONSTRAINT FK_ProveedorProducto_Proveedor
-    FOREIGN KEY (ProveedorID) REFERENCES Proveedor(ProveedorID);
-
 -- Tabla OrdenDeCompra (relacionada con Empleado y Cliente)
 CREATE TABLE OrdenDeCompra (
     OrdenDeCompraID INT PRIMARY KEY NOT NULL,
@@ -96,14 +77,6 @@ CREATE TABLE OrdenDeCompra (
     ValorTotal FLOAT NOT NULL
 );
 
-ALTER TABLE OrdenDeCompra
-    ADD CONSTRAINT FK_OrdenDeCompra_Empleado
-    FOREIGN KEY (EmpleadoID) REFERENCES Empleado(EmpleadoID);
-
-ALTER TABLE OrdenDeCompra
-    ADD CONSTRAINT FK_OrdenDeCompra_Cliente
-    FOREIGN KEY (ClienteID) REFERENCES Cliente(ClienteID);
-
 -- Tabla Pedido (relacionada con OrdenDeCompra y Producto)
 CREATE TABLE Pedido (
     PedidoID INT PRIMARY KEY NOT NULL,
@@ -112,14 +85,6 @@ CREATE TABLE Pedido (
     Cantidad INT NOT NULL,
     ValorUnitario FLOAT NOT NULL
 );
-
-ALTER TABLE Pedido
-    ADD CONSTRAINT FK_Pedido_OrdenDeCompra
-    FOREIGN KEY (OrdenDeCompraID) REFERENCES OrdenDeCompra(OrdenDeCompraID);
-
-ALTER TABLE Pedido
-    ADD CONSTRAINT FK_Pedido_Producto
-    FOREIGN KEY (ProductoID) REFERENCES Producto(ProductoID);
 
 -- Tabla CompralInsumos (relacionada con ProveedorProducto)
 CREATE TABLE CompralInsumos (
@@ -134,10 +99,6 @@ CREATE TABLE CompralInsumos (
     ValorTotal FLOAT NOT NULL
 );
 
-ALTER TABLE CompralInsumos
-    ADD CONSTRAINT FK_CompralInsumos_ProveedorProducto
-    FOREIGN KEY (ProveedorProductoID) REFERENCES ProveedorProducto(ProveedorProductoID);
-
 -- Tabla Kardex (relacionada con Producto)
 CREATE TABLE Kardex (
     KardexID INT PRIMARY KEY NOT NULL,
@@ -148,7 +109,3 @@ CREATE TABLE Kardex (
     MotivoSalida VARCHAR(250) NULL,
     Fecha DATE NOT NULL
 );
-
-ALTER TABLE Kardex
-    ADD CONSTRAINT FK_Kardex_Producto
-    FOREIGN KEY (ProductoID) REFERENCES Producto(ProductoID);
