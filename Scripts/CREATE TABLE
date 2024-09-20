@@ -1,5 +1,5 @@
 -- Creación de Database
---CREATE DATABASE SuperLorenz;
+-- CREATE DATABASE SuperLorenz;
 
 -- Usar Databse
 USE SuperLorenz;
