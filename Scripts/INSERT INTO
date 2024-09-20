@@ -1,7 +1,6 @@
--- Añadir acá el Script para insertar los datos creados por IA
-
 -- Usar Databse
 USE SuperLorenz;
+
 INSERT INTO Persona (DocumentoID, TipoDeDocumento, PersonaID, Nombre, Celular)
 VALUES (103312222, 'Cedula', 1001, 'Juan Pérez', '1123456789'),
 (14892364, 'Cedula', 1002, 'Laura Gómez', '1223456789'),
@@ -66,5 +65,5 @@ VALUES
 INSERT INTO Kardex (KardexID, ProductoID, CantidadSalida, CantidadEntrada, CantidadDisponible, MotivoSalida, Fecha)
 VALUES 
 (10001, 5001, 5, 0, 5, 'Venta', '2023-09-15'),
-(10002, 5002, 0, 10, 10, 'Recepción', '2023-09-18');
-(10003, 5002, 0, 15, 10 , 'Venta', '2023-09-19')
+(10002, 5002, 0, 10, 10, 'Recepción', '2023-09-18')
+(10003, 5002, 0, 15, 10 , 'Venta', '2023-09-19');
