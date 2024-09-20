@@ -10,7 +10,7 @@ CREATE TABLE Persona (
     TipoDeDocumento VARCHAR(50) NOT NULL,
     PersonaID INT PRIMARY KEY NOT NULL,
     Nombre VARCHAR(50) NOT NULL,
-    Celular INT NOT NULL
+    Celular VARCHAR(16) NOT NULL
 );
 
 -- Tabla Empleado (relacionada con Persona)
@@ -23,7 +23,7 @@ CREATE TABLE Empleado (
     EPS VARCHAR(50) NOT NULL,
     ARL VARCHAR(50) NOT NULL,
     NombreDeEmergencia VARCHAR(50) NOT NULL,
-    CelularDeEmergencia INT NOT NULL
+    CelularDeEmergencia VARCHAR(16) NOT NULL
 );
 
 -- Tabla Cliente (relacionada con Persona)
@@ -44,7 +44,7 @@ CREATE TABLE Proveedor (
     ProveedorID INT PRIMARY KEY NOT NULL,
     TipoDeProveedor VARCHAR(50) NOT NULL,
     NombreDeContacto VARCHAR(50) NOT NULL,
-    NumeroDeContacto INT NOT NULL
+    NumeroDeContacto VARCHAR(16) NOT NULL
 );
 
 -- Tabla Producto
