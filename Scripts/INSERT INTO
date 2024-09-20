@@ -65,5 +65,5 @@ VALUES
 INSERT INTO Kardex (KardexID, ProductoID, CantidadSalida, CantidadEntrada, CantidadDisponible, MotivoSalida, Fecha)
 VALUES 
 (10001, 5001, 5, 0, 5, 'Venta', '2023-09-15'),
-(10002, 5002, 0, 10, 10, 'Recepción', '2023-09-18')
+(10002, 5002, 0, 10, 10, 'Recepción', '2023-09-18'),
 (10003, 5002, 0, 15, 10 , 'Venta', '2023-09-19');
