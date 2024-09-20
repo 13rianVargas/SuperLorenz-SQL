@@ -3,11 +3,11 @@
 -- Usar Databse
 USE SuperLorenz;
 INSERT INTO Persona (DocumentoID, TipoDeDocumento, PersonaID, Nombre, Celular)
-VALUES (103312222, 'Cedula', 1001, 'Juan Pérez', 123456789);
+VALUES (103312222, 'Cedula', 1001, 'Juan Pérez', '123456789');
 
 INSERT INTO Empleado (PersonaID, EmpleadoID, Cargo, Dependencia, TipoDeContrato, EPS, ARL, NombreDeEmergencia, CelularDeEmergencia)
-VALUES (1001, 2001, 'Gerente', 'Administración', 'Indefinido', 'Salud S.A.', 'ARL S.A.', 'Ana Pérez', 321654987),
-(1002, 2002, 'Asistente', 'Finanzas', 'Temporal', 'Salud S.A.', 'ARL S.A.', 'Luis Gómez', 987321654);
+VALUES (1001, 2001, 'Gerente', 'Administración', 'Indefinido', 'Salud S.A.', 'ARL S.A.', 'Ana Pérez', '321654987'),
+(1002, 2002, 'Asistente', 'Finanzas', 'Temporal', 'Salud S.A.', 'ARL S.A.', 'Luis Gómez', '987321654');
 
 INSERT INTO Cliente (PersonaID, ClienteID, Direccion, TipoDeCliente, FechaDeNacimiento, EstadoCivil, AutorizacionDeDatos)
 VALUES 
@@ -17,8 +17,8 @@ VALUES
 
 INSERT INTO Proveedor (PersonaID, ProveedorID, TipoDeProveedor, NombreDeContacto, NumeroDeContacto)
 VALUES 
-(1001, 4001, 'Mayorista', 'Pedro Ruiz', 987654321),
-(1002, 4002, 'Distribuidor', 'Laura Torres', 123987654);
+(1001, 4001, 'Mayorista', 'Pedro Ruiz', '987654321'),
+(1002, 4002, 'Distribuidor', 'Laura Torres', '123987654');
 
 
 INSERT INTO Producto (ProductoID, NombreDelProducto, DescripcionDelProducto, Categoria, Marca)
