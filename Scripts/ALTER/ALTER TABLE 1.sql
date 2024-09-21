@@ -1,3 +1,6 @@
+-- Usar Database
+USE SuperLorenz;
+
 ALTER TABLE Empleado
     ADD CONSTRAINT FK_Empleado_Persona
     FOREIGN KEY (PersonaID) REFERENCES Persona(PersonaID);

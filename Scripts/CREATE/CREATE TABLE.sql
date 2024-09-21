@@ -1,7 +1,7 @@
 -- Creación de Database
 -- CREATE DATABASE SuperLorenz;
 
--- Usar Databse
+-- Usar Database
 USE SuperLorenz;
 
 -- Tabla Persona
