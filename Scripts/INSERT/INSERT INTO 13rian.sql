@@ -3,20 +3,20 @@ USE SuperLorenz;
 
 INSERT INTO Persona (DocumentoID, TipoDeDocumento, PersonaID, Nombre, Celular)
 VALUES
-(51727487, Cedula, 1013, 'Brian Vargas', '018000777777'),
-(51727488, Cedula, 1014, 'Steven Clavijo', '018000777778'),
-(51727489, Cedula, 1015, 'Natalia Gaona', '018000777779'),
-(51727490, Cedula, 1016, 'Sofia Chinchilla', '018000777780'),
-(51727491, Cedula, 1017, 'Alejandro Rincón', '018000777781'),
-(51727492, Cedula, 1018, 'Iker Rivera', '018000777782'),
-(51727493, Cedula, 1019, 'Luisa Garcia', '018000777783'),
-(51727494, Cedula, 1020, 'Santiago Correa', '018000777784'),
-(51727495, Cedula, 1021, 'Alejandro Fajardo', '018000777785'),
-(51727496, Cedula, 1022, 'Catalina Castiblanco', '018000777786'),
-(51727497, Cedula, 1023, 'Isabella Rivera', '018000777787'),
-(51727498, Cedula, 1024, 'Paula Mendez', '018000777788'),
-(51727499, Cedula, 1025, 'Valentina Calderón', '018000777789'),
-(51727500, Cedula, 1026, 'María Cadena', '018000777790');
+(51727487, 'Cédula', 1013, 'Brian Vargas', '018000777777'),
+(51727488, 'Cédula', 1014, 'Steven Clavijo', '018000777778'),
+(51727489, 'Cédula', 1015, 'Natalia Gaona', '018000777779'),
+(51727490, 'Cédula', 1016, 'Sofia Chinchilla', '018000777780'),
+(51727491, 'Cédula', 1017, 'Alejandro Rincón', '018000777781'),
+(51727492, 'Cédula', 1018, 'Iker Rivera', '018000777782'),
+(51727493, 'Cédula', 1019, 'Luisa Garcia', '018000777783'),
+(51727494, 'Cédula', 1020, 'Santiago Correa', '018000777784'),
+(51727495, 'Cédula', 1021, 'Alejandro Fajardo', '018000777785'),
+(51727496, 'Cédula', 1022, 'Catalina Castiblanco', '018000777786'),
+(51727497, 'Cédula', 1023, 'Isabella Rivera', '018000777787'),
+(51727498, 'Cédula', 1024, 'Paula Mendez', '018000777788'),
+(51727499, 'Cédula', 1025, 'Valentina Calderón', '018000777789'),
+(51727500, 'Cédula', 1026, 'María Cadena', '018000777790');
 
 INSERT INTO Empleado (PersonaID, EmpleadoID, Cargo, Dependencia, TipoDeContrato, EPS, ARL, NombreDeEmergencia, CelularDeEmergencia)
 VALUES
@@ -68,13 +68,13 @@ VALUES
 
 INSERT INTO Pedido (PedidoID, OrdenDeCompraID, ProductoID, Cantidad, ValorUnitario)
 VALUES
-(8003, 2005, 5003, 10, 1800.0),
-(8004, 2005, 5004, 5, 2800.0),
-(8005, 2006, 5005, 2, 9000.0),
-(8006, 2007, 5006, 8, 3200.0),
-(8007, 2008, 5007, 12, 4000.0);
+(8003, 7002, 5003, 10, 1800.0),
+(8004, 7003, 5004, 5, 2800.0),
+(8005, 7004, 5005, 2, 9000.0),
+(8006, 7005, 5006, 8, 3200.0),
+(8007, 7006, 5007, 12, 4000.0);
 
-INSERT INTO CompralInsumos (CompralInsumosID, ProveedorProductoID, Cantidad, Estado, FechaDeCompra, FechaDeEntrega, PrecioUnitario, ProductoMasIva, ValorTotal)
+INSERT INTO CompraInsumos (CompraInsumosID, ProveedorProductoID, Cantidad, Estado, FechaDeCompra, FechaDeEntrega, PrecioUnitario, ProductoMasIva, ValorTotal)
 VALUES
 (9002, 6003, 100, 'Completado', '2024-09-01', '2024-09-05', 1800.0, 2142.0, 214200.0),
 (9003, 6004, 50, 'En Proceso', '2024-09-02', '2024-09-07', 2800.0, 3332.0, 166600.0),
