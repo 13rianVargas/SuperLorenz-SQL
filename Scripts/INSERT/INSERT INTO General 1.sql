@@ -58,7 +58,7 @@ VALUES
 (8001, 7001, 5001, 2, 125.0),
 (8002, 7001, 5002, 1, 225.0);
 
-INSERT INTO CompralInsumos (CompralInsumosID, ProveedorProductoID, Cantidad, Estado, FechaDeCompra, FechaDeEntrega, PrecioUnitario, ProductoMasIva, ValorTotal)
+INSERT INTO CompraInsumos (CompraInsumosID, ProveedorProductoID, Cantidad, Estado, FechaDeCompra, FechaDeEntrega, PrecioUnitario, ProductoMasIva, ValorTotal)
 VALUES 
 (9001, 6001, 10, 'Pendiente', '2023-09-10', '2023-09-12', 110.0, 121.0, 1210.0);
 

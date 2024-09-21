@@ -37,8 +37,8 @@ ALTER TABLE Pedido
     ADD CONSTRAINT FK_Pedido_Producto
     FOREIGN KEY (ProductoID) REFERENCES Producto(ProductoID);
 
-ALTER TABLE CompralInsumos
-    ADD CONSTRAINT FK_CompralInsumos_ProveedorProducto
+ALTER TABLE CompraInsumos
+    ADD CONSTRAINT FK_CompraInsumos_ProveedorProducto
     FOREIGN KEY (ProveedorProductoID) REFERENCES ProveedorProducto(ProveedorProductoID);
 
 ALTER TABLE Kardex

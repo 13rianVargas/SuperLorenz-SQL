@@ -86,9 +86,9 @@ CREATE TABLE Pedido (
     ValorUnitario FLOAT NOT NULL
 );
 
--- Tabla CompralInsumos (relacionada con ProveedorProducto)
-CREATE TABLE CompralInsumos (
-    CompralInsumosID INT PRIMARY KEY NOT NULL,
+-- Tabla CompraInsumos (relacionada con ProveedorProducto)
+CREATE TABLE CompraInsumos (
+    CompraInsumosID INT PRIMARY KEY NOT NULL,
     ProveedorProductoID INT NOT NULL,
     Cantidad INT NOT NULL,
     Estado VARCHAR(50) NOT NULL,
