@@ -210,7 +210,7 @@ VALUES
 (1074, 3058, 'Calle 27 #45-12', 'VIP', '1994-09-11', 'Divorciado', 'Sí'),
 (1075, 3059, 'Carrera 9 #90-11', 'Ocasional', '1986-12-14', 'Soltero', 'Sí'),
 (1076, 3060, 'Carrera 8 #99-15', 'Ocasional', '1986-12-14', 'Soltero', 'Sí'),
-(1077, 2010, 'Carrera 8 #96-15', 'VIP', '1986-12-15', 'Soltero', 'Sí', );
+(1077, 3061, 'Carrera 8 #96-15', 'VIP', '1986-12-15', 'Soltero', 'Sí', );
 
 INSERT INTO Proveedor (PersonaID, ProveedorID, TipoDeProveedor, NombreDeContacto, NumeroDeContacto)
 VALUES
