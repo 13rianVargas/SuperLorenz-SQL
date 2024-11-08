@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS Cliente (
 -- Tabla Pedido
 CREATE TABLE IF NOT EXISTS Pedido (
     pedidoID INT AUTO_INCREMENT PRIMARY KEY,
-    empleadoID INT NOT NULL,
+    empleadoID INT NULL,
     clienteID INT NOT NULL,
     medioPago ENUM('TARJETA', 'EFECTIVO', 'TRANSFERENCIA', 'OTRO') NOT NULL,
     fechaPago DATE NOT NULL,
